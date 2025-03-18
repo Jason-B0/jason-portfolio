@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/app.css";
 
-import portrait from "../assets/images/about-me/JB-referee.png";
+import portrait from "/images/about-me/JB-referee.png";
 import aboutmePath from "../assets/info/aboutme.txt";
 
 const PAGES = {

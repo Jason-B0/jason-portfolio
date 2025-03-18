@@ -8,7 +8,7 @@ const projects = {
 				In addition to the assigned work duty as a league administrative assistant, I completed a few special projects for Soccer Nova Scotia's departments.
 			</p>
 		`,
-		"bgrd": "../assets/images/past-projects/soccerns-ball.jpg",
+		"bgrd": "images/past-projects/soccerns-ball.jpg",
 
 		projects: [
 			{
@@ -58,7 +58,7 @@ const projects = {
 				Here are some of the projects I have completed or are ongoing.
 			</p>
 		`,
-		"bgrd": "../assets/images/past-projects/dalu-walkway.jpg",
+		"bgrd": "images/past-projects/dalu-walkway.jpg",
 
 		projects: [
 			{
@@ -122,9 +122,9 @@ const projects = {
 				`,
 
 				"imgs": [
-					"../assets/images/past-projects/cia-sac-npc.png",
-					"../assets/images/past-projects/cia-sac-npc-2.png",
-					"../assets/images/past-projects/cia-sac-npc-4.png",
+					"images/past-projects/cia-sac-npc.png",
+					"images/past-projects/cia-sac-npc-2.png",
+					"images/past-projects/cia-sac-npc-4.png",
 				]
 			},
 		
@@ -142,16 +142,16 @@ const projects = {
 				`,
 
 				"imgs": [
-					"../assets/images/past-projects/galveston-1.png",
-					"../assets/images/past-projects/galveston-2.png",
-					"../assets/images/past-projects/galveston-4.png",
-					"../assets/images/past-projects/galveston-3.png",
+					"images/past-projects/galveston-1.png",
+					"images/past-projects/galveston-2.png",
+					"images/past-projects/galveston-4.png",
+					"images/past-projects/galveston-3.png",
 				]
 			},
 			
 		],
 		
-		"bgrd": "../assets/images/past-projects/cia-sac-training.png",
+		"bgrd": "images/past-projects/cia-sac-training.png",
 	},
 	
 	RBX_MILSIM_2: {
@@ -167,12 +167,12 @@ const projects = {
 				'intro': "An in-game software with UIs supporting data entry, mission planning, and file transfers",
 				'description': `
 					<p>
-						<u>FIOSS</u>, taken from military movies and documentaries, is a mimic of intraweb terminal with the goal of allowing users to input data, plan missions, and share\/transfer files between each other.<br/><br/>
+						<u>FIOSS</u>, taken from military movies and documentaries, is a mimic of intraweb terminal with the goal of allowing users to input data, plan missions, and share/transfer files between each other.<br/><br/>
 					</p>
 				`,
 
 				"imgs": [
-					"../assets/images/past-projects/cia-sac-fioss-2.png"
+					"images/past-projects/cia-sac-fioss-2.png"
 				]
 			},
 			{
@@ -191,7 +191,7 @@ const projects = {
 
 		],
 
-		"bgrd": "../assets/images/past-projects/cia-sac-training-2.png",
+		"bgrd": "images/past-projects/cia-sac-training-2.png",
 	},
 	
 	RBX_USM: {
@@ -218,18 +218,18 @@ const projects = {
 				`,
 
 				"imgs": [
-					"../assets/images/past-projects/mcb-rblx-2020.png",
-					"../assets/images/past-projects/mcb-rblx-airfield-1.png",
-					"../assets/images/past-projects/mcb-rblx-airfield-2.jpg",
-					"../assets/images/past-projects/mcb-rblx-scn-1.png",
-					"../assets/images/past-projects/mcb-rblx-las-flores-1-1.png",
-					"../assets/images/past-projects/mcb-rblx-las-flores-2-1.jpg",
+					"images/past-projects/mcb-rblx-2020.png",
+					"images/past-projects/mcb-rblx-airfield-1.png",
+					"images/past-projects/mcb-rblx-airfield-2.jpg",
+					"images/past-projects/mcb-rblx-scn-1.png",
+					"images/past-projects/mcb-rblx-las-flores-1-1.png",
+					"images/past-projects/mcb-rblx-las-flores-2-1.jpg",
 				]
 			},
 
 		],
 
-		"bgrd": "../assets/images/past-projects/mcb-rblx-2019.jpg",
+		"bgrd": "images/past-projects/mcb-rblx-2019.jpg",
 	},
 	
 }

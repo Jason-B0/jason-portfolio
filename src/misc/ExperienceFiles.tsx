@@ -20,7 +20,7 @@ const experiences = {
 			</ul>
 		`,
 
-		"bgrd": "../assets/images/professional-experiences/shoothouse-rblx.png"
+		"bgrd": "images/professional-experiences/shoothouse-rblx.png"
 	},
 	
 	1: {
@@ -41,7 +41,7 @@ const experiences = {
 			</ul>
 		`,
 		
-		"bgrd": "../assets/images/professional-experiences/mcb-rblx-las-flores-2-2.png"
+		"bgrd": "images/professional-experiences/mcb-rblx-las-flores-2-2.png"
 	},
 	
 	2: {
@@ -65,7 +65,7 @@ const experiences = {
 			</ul>
 		`,
 
-		"bgrd": "../assets/images/professional-experiences/soccerns.jpg"
+		"bgrd": "images/professional-experiences/soccerns.jpg"
 	},
 	
 	3: {
@@ -89,7 +89,7 @@ const experiences = {
 			</ul>
 		`,
 
-		"bgrd": "../assets/images/professional-experiences/dalu.JPG"
+		"bgrd": "images/professional-experiences/dalu.JPG"
 	},
 	
 	4: {
@@ -113,7 +113,7 @@ const experiences = {
 			</ul>
 		`,
 
-		"bgrd": "../assets/images/professional-experiences/referee-nationals-group-2022.JPG"
+		"bgrd": "images/professional-experiences/referee-nationals-group-2022.JPG"
 	},
 	
 	5: {
@@ -151,7 +151,7 @@ const experiences = {
 			</ul>
 		`,
 
-		"bgrd": "../assets/images/professional-experiences/SAC-garage.png"
+		"bgrd": "images/professional-experiences/SAC-garage.png"
 	}
 }
 
