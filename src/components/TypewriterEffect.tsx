@@ -40,7 +40,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
 			<p
 				className={className}
 				dangerouslySetInnerHTML={{
-					__html: displayText + (isTyping ? '<span class="typing-cursor">|</span>' : '')
+					__html: displayText + (isTyping && displayText.length > 0 ? '<span class="typing-cursor">|</span>' : '')
 				}}
 			/>
 		);
@@ -49,7 +49,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
 	return (
 		<p className={className}>
 			{displayText}
-			{isTyping && <span className="typing-cursor">|</span>}
+			{isTyping && displayText.length > 0 ? '|' : ''}
 		</p>
 	);
 };
