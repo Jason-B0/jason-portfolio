@@ -3,6 +3,7 @@ import HomeBtn from '../components/HomeButton.tsx';
 import Footer from '../components/Footer.tsx';
 
 import "../styles/app.css";
+import TypewriterEffect from '../components/TypewriterEffect.tsx';
 
 
 function ExperienceEntry() {
@@ -10,7 +11,7 @@ function ExperienceEntry() {
 		<div className="mx-auto w-full max-h-full min-h-full justify-center items-center">
 			
 			{Object.entries(experienceFiles).map(([key, entry]) => (
-				<div key={key} className="h-auto pb-10 relative overflow-hidden">
+				<div key={key} className="h-auto min-h-[500px] pb-10 relative overflow-hidden">
 					<img
 						src={entry['bgrd']}
 						alt={`${entry['company']} background`}
@@ -22,19 +23,48 @@ function ExperienceEntry() {
 							
 							{/* job title */}
 							<div className="flex justify-between space-x-15 w-full align-middle">
-								<p className="text-xl font-bold">{entry['role']}, {entry['company']}</p>
-								<p className="text-sm mt-1.5">{entry['start']} {entry['end']}</p>
+								<TypewriterEffect
+									content={`${entry['role']}, ${entry['company']}`}
+									isHtml={false}
+									className="text-xl font-bold"
+									speed={10}
+								/>
+								<TypewriterEffect
+									content={`${entry['start']} ${entry['end']}`}
+									isHtml={false}
+									className="text-sm mt-1.5"
+									speed={10}
+								/>
 							</div>
 							
 							<span className="horizontal-line-green"></span>
 							
 							{/* location & project name */}
 							<div className="flex justify-between space-x-15 w-full align-middle">
-								<p className="text-md">{entry['location']}</p>
-								<p className="text-md italic">{entry['project-name']}</p>
+								<TypewriterEffect
+									content={entry['location']}
+									isHtml={false}
+									className="text-md"
+									speed={10}
+								/>
+								<TypewriterEffect
+									content={entry['project-name']}
+									isHtml={false}
+									className="text-md italic"
+									speed={10}
+								/>
 							</div>
 							
-							<div className="experience-list my-5 mx-[2.5%]" dangerouslySetInnerHTML={{ __html: entry['description'] }}></div>
+							<div className="experience-list my-5 mx-[2.5%]">
+								<TypewriterEffect
+									content={
+										entry['description']
+									}
+									isHtml={true}
+									className="mt-5 mb-10 text-lg text-left"
+									speed={10}
+								></TypewriterEffect>
+							</div>
 						</div>
 					</section>
 				</div>

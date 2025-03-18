@@ -1,0 +1,9 @@
+declare module '*.tsx';
+declare module '*.png';
+declare module '*.jpg';
+declare module '*.jpeg';
+declare module '*.gif';
+declare module '*.svg';
+declare module '*.css';
+declare module '*.txt';
+declare module '*.md';

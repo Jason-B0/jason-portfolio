@@ -2,11 +2,14 @@ import HomeBtn from '../components/HomeButton.tsx';
 import Footer from '../components/Footer.tsx';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import TypewriterEffect from '../components/TypewriterEffect.tsx';
+
 import "../styles/app.css";
 
 import portrait from "/images/about-me/JB-referee.png";
 import aboutmePath from "../assets/info/aboutme.txt";
 
+const TYPING_SPEED = 5; // measured in ms
 const PAGES = {
 	"Experiences": { title: "Experiences", path: "/Experiences" },
 	"Projects": { title: "Projects", path: "/Projects" },
@@ -44,13 +47,22 @@ export function AboutMe() {
 
 					{/* Right Column */}
 					<div className="col-start-2 col-end-4 flex flex-col justify-top items-left">
-						<p className="mt-15 text-lg text-left" dangerouslySetInnerHTML={{ __html: aboutMeText }}></p>
+						
 						<Link rel="noreferrer" className="text-lg mt-5 text-green-500" to={PAGES.Experiences.path}>
 							{"> " + PAGES.Experiences.title}
 						</Link>
-						<Link rel="noreferrer" className="text-lg my-5 text-green-500" to={PAGES.Projects.path}>
+
+						<Link rel="noreferrer" className="text-lg mt-5 text-green-500" to={PAGES.Projects.path}>
 							{"> " + PAGES.Projects.title}
 						</Link>
+						
+						<TypewriterEffect
+							content={
+								aboutMeText
+							}
+							isHtml={true}
+							className="mt-5 mb-10 text-lg text-left"
+						/>
 					</div>
 
 				</section>
@@ -58,10 +70,22 @@ export function AboutMe() {
 				<span className='horizontal-line-orange'></span>
 				
 				<div className='my-10 mx-[10%] text-lg'>
-					<ul>
-						<li>Email: jc_bai@outlook.com | jbai@dal.ca<br /><br /></li>
-						<li><a href="https://www.linkedin.com/in/jason-ck-bai/">LinkedIn: jason-ck-bai</a><br /><br /></li>
-					</ul>
+					<TypewriterEffect
+						content={`
+							<ul>
+								<li>Email: jc_bai@outlook.com | jbai@dal.ca<br /><br /></li>
+								<li>
+									<a href="https://www.linkedin.com/in/jason-ck-bai/">
+										LinkedIn: jason-ck-bai
+									</a>
+									<br /><br />
+								</li>
+							</ul>
+						`}
+						isHtml={true}
+						speed={TYPING_SPEED * 3}
+					
+					></TypewriterEffect>
 				</div>
 				
 			</section>
