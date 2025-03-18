@@ -51,7 +51,7 @@ export function Welcome() {
 		return () => {
 			window.removeEventListener('keydown', handleKeyDown);
 		};
-	}, [activeItem, navItems, navigate]);
+	}, [activeItem, navigate]);
 	
 	return (
 		<div className="flex h-auto max-h-200">
