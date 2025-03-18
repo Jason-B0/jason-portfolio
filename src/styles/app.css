@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'OCR-A Extended';
+  src: url('../assets/OCRAEXT.TTF') format('truetype');
+}
+
+@theme {
+  --font-sans: "OCR-A Extended", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+  @apply bg-black;
+  color-scheme: dark;
+}
+
+.experience-list *:is(ul) {
+  @apply list-disc;
+}
+.experience-list *:is(ul)>li {
+  @apply mb-4;
+}
+
+span.horizontal-line-green {
+	@apply block h-1 w-full mt-2.5 mb-5 bg-[#007302] self-center;
+}
+
+span.horizontal-line-orange {
+	@apply block h-1 w-full mt-2.5 mb-5 bg-[#d86900] self-center;
+}
+
+.hint {
+  @apply text-xs mt-2 text-gray-500;
+}
+
+.portrait-photo {
+  @apply aspect-[2/3] object-scale-down;
+}
+
+li.menus { @apply 
+	py-1 px-4 
+	cursor-pointer 
+	hover:text-green-600 ;
+}
