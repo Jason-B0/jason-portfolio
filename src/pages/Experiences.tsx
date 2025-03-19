@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import experienceFiles from '../misc/ExperienceFiles.tsx';
 import HomeBtn from '../components/HomeButton.tsx';
 import Footer from '../components/Footer.tsx';
@@ -5,22 +6,60 @@ import Footer from '../components/Footer.tsx';
 import "../styles/app.css";
 import TypewriterEffect from '../components/TypewriterEffect.tsx';
 
+const PARALLAX_SPEED_PERCENT = 20;
+const PARALLAX_SPEED_ACTUAL = PARALLAX_SPEED_PERCENT * 0.01;
 
 function ExperienceEntry() {
+	const parallaxRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			parallaxRefs.current.forEach((ref) => {
+				if (ref) {
+					const scrollPosition = window.scrollY;
+					const elementPosition = ref.offsetTop;
+					const distance = scrollPosition - elementPosition;
+					const image = ref.querySelector('img');
+
+					if (image && isElementInViewport(ref)) {
+						// Adjust the translateY value to control parallax intensity
+						image.style.transform = `translateY(${distance * PARALLAX_SPEED_ACTUAL}px)`;
+					}
+				}
+			});
+		};
+
+		// Check if element is in vp
+		const isElementInViewport = (el: HTMLElement) => {
+			const rect = el.getBoundingClientRect();
+			return (
+				rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.bottom >= 0
+			);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
 		<div className="mx-auto w-full max-h-full min-h-full justify-center items-center">
-			
-			{Object.entries(experienceFiles).map(([key, entry]) => (
-				<div key={key} className="h-auto min-h-[500px] pb-10 relative overflow-hidden">
+
+			{Object.entries(experienceFiles).map(([key, entry], index) => (
+				<div
+					key={key}
+					className="h-auto pb-10 relative overflow-hidden"
+					ref={el => parallaxRefs.current[index] = el}
+				>
 					<img
 						src={entry['bgrd']}
 						alt={`${entry['company']} background`}
-						className="absolute inset-0 w-full h-full object-cover opacity-40"
+						className="absolute inset-0 w-full h-[120%] object-cover opacity-40 transition-transform duration-300 ease-out"
 					/>
-					
+
 					<section className="my-5 mx-[20%] z-10 relative flex">
 						<div className="w-full">
-							
+
 							{/* job title */}
 							<div className="flex justify-between space-x-15 w-full align-middle">
 								<TypewriterEffect
@@ -36,9 +75,9 @@ function ExperienceEntry() {
 									speed={10}
 								/>
 							</div>
-							
+
 							<span className="horizontal-line-green"></span>
-							
+
 							{/* location & project name */}
 							<div className="flex justify-between space-x-15 w-full align-middle">
 								<TypewriterEffect
@@ -54,7 +93,7 @@ function ExperienceEntry() {
 									speed={10}
 								/>
 							</div>
-							
+
 							<div className="experience-list my-5 mx-[2.5%]">
 								<TypewriterEffect
 									content={
@@ -69,7 +108,7 @@ function ExperienceEntry() {
 					</section>
 				</div>
 			))}
-			
+
 		</div>
 	);
 }
