@@ -8,6 +8,7 @@ import "../styles/app.css";
 
 import portrait from "/images/about-me/JB-referee.png";
 import aboutmePath from "../assets/info/aboutme.txt";
+import HorizontalLine from '../components/HorizontalLine.tsx';
 
 const TYPING_SPEED = 5; // measured in ms
 const PAGES = {
@@ -36,7 +37,7 @@ export function AboutMe() {
 
 				<HomeBtn />
 				
-				<span className='horizontal-line-orange'></span>
+				<HorizontalLine inColor="orange" />
 				
 				<section className="max-h-200 grid grid-cols-3 grid-rows-1" id="me">
 					
@@ -67,7 +68,7 @@ export function AboutMe() {
 
 				</section>
 
-				<span className='horizontal-line-orange'></span>
+				<HorizontalLine inColor="orange" />
 				
 				<div className='my-10 mx-[10%] text-lg'>
 					<TypewriterEffect
