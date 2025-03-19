@@ -22,12 +22,8 @@ html {
   @apply mb-4;
 }
 
-span.horizontal-line-green {
-	@apply block h-1 w-full mt-2.5 mb-5 bg-[#007302] self-center;
-}
-
-span.horizontal-line-orange {
-	@apply block h-1 w-full mt-2.5 mb-5 bg-[#d86900] self-center;
+span.horizontal-line {
+	@apply block h-1 w-full mt-2.5 mb-5 self-center;
 }
 
 .hint {

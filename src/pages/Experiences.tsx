@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import experienceFiles from '../misc/ExperienceFiles.tsx';
 import HomeBtn from '../components/HomeButton.tsx';
 import Footer from '../components/Footer.tsx';
+import HorizontalLine from '../components/HorizontalLine.tsx';
 
 import "../styles/app.css";
 import TypewriterEffect from '../components/TypewriterEffect.tsx';
@@ -76,8 +77,8 @@ function ExperienceEntry() {
 								/>
 							</div>
 
-							<span className="horizontal-line-green"></span>
-
+							<HorizontalLine inColor="green" />
+							
 							{/* location & project name */}
 							<div className="flex justify-between space-x-15 w-full align-middle">
 								<TypewriterEffect

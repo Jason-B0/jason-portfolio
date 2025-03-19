@@ -3,6 +3,7 @@ import HomeBtn from '../components/HomeButton.tsx';
 import Footer from '../components/Footer.tsx';
 
 import "../styles/app.css";
+import HorizontalLine from '../components/HorizontalLine.tsx';
 
 function ProjectsEntry() {
 	return (
@@ -22,7 +23,7 @@ function ProjectsEntry() {
 							<p className="text-xl font-bold">{entry['association']}</p>
 							<p className="text-lg mt-1">{entry['start-end']}</p>
 						</div>
-						{entry['association'] === '' ? null : <span className="horizontal-line-green"></span>}
+						{entry['association'] === '' ? null : <HorizontalLine inColor="green" />}
 						<div className="text-lg mt-1" dangerouslySetInnerHTML={{__html: entry['description']}} ></div>
 					</div>
 					
