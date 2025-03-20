@@ -15,8 +15,9 @@ const parseDate = (dateStr: string): Date => {
 
 		// Map month abbreviations to month numbers (0-11)
 		const monthMap: Record<string, number> = {
-			'jan': 0, 'feb': 1, 'mar': 2, 'apr': 3, 'may': 4, 'jun': 5,
-			'jul': 6, 'aug': 7, 'sep': 8, 'oct': 9, 'nov': 10, 'dec': 11
+			'jan': 1, 'feb': 2, 'mar': 3, 'apr': 4, 'may': 5, 'jun': 6,
+			'jul': 7, 'aug': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dec': 12,
+			'since': 12, 'present': 0
 		};
 
 		const monthKey = month.toLowerCase();
