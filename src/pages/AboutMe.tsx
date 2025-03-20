@@ -39,7 +39,7 @@ export function AboutMe() {
 				
 				<HorizontalLine inColor="orange" />
 				
-				<section className="max-h-200 grid grid-cols-3 grid-rows-1" id="me">
+				<section className="h-auto grid grid-cols-3 grid-rows-1" id="me">
 					
 					{/* Left Column*/}
 					<div className="col-start-1 col-end-1 flex justify-center items-left">
