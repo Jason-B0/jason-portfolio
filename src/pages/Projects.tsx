@@ -1,6 +1,5 @@
 import projectFiles from '../misc/ProjectFiles.tsx';
 import HomeBtn from '../components/HomeButton.tsx';
-import Footer from '../components/Footer.tsx';
 
 import "../styles/app.css";
 import HorizontalLine from '../components/HorizontalLine.tsx';
@@ -92,7 +91,6 @@ export function Projects() {
 				
 				<ProjectsEntry />
 			</section>
-			<Footer />
 		</main>
 	)
 }

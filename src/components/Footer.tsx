@@ -6,6 +6,7 @@ export default function Footer()
 	return (
 		<footer className="flex justify-center items-center h-[10%] my-20">
 			<p className="text-lg">Jason Bai &copy; {year}</p>
+			<p className="text-lg mx-5">Powered by Github Pages</p>
 		</footer>
 	);
 }

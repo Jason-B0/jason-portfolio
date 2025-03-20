@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import experienceFiles from '../misc/ExperienceFiles.tsx';
 import HomeBtn from '../components/HomeButton.tsx';
-import Footer from '../components/Footer.tsx';
 import HorizontalLine from '../components/HorizontalLine.tsx';
 
 import "../styles/app.css";
@@ -50,7 +49,7 @@ function ExperienceEntry() {
 				<div
 					key={key}
 					className="h-auto pb-10 relative overflow-hidden"
-					ref={el => parallaxRefs.current[index] = el}
+					ref={el => { parallaxRefs.current[index] = el; }}
 				>
 					<img
 						src={entry['bgrd']}
@@ -128,8 +127,6 @@ export function Experiences() {
 				
 				<ExperienceEntry />
 			</section>
-			
-			<Footer />
 		</main>
 	)
 }

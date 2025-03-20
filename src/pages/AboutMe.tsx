@@ -1,5 +1,4 @@
 import HomeBtn from '../components/HomeButton.tsx';
-import Footer from '../components/Footer.tsx';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import TypewriterEffect from '../components/TypewriterEffect.tsx';
@@ -90,8 +89,6 @@ export function AboutMe() {
 				</div>
 				
 			</section>
-			
-			<Footer />
 		</main>
 		
 	);
