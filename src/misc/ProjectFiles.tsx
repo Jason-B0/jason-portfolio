@@ -12,7 +12,7 @@ const projects = {
 
 		projects: [
 			{
-				'project-name': "Game Day Social Media Manager",
+				'project-name': "Game Day Social Media Operations",
 				'start-end': "",
 				'intro': "",
 				'description': `
