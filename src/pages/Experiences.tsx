@@ -1,13 +1,42 @@
 import { useEffect, useRef } from 'react';
-import experienceFiles from '../misc/ExperienceFiles.tsx';
 import HomeBtn from '../components/HomeButton.tsx';
 import HorizontalLine from '../components/HorizontalLine.tsx';
 
 import "../styles/app.css";
 import TypewriterEffect from '../components/TypewriterEffect.tsx';
+import parseDate from '../utils/parseDate';
 
 const PARALLAX_SPEED_PERCENT = 20;
 const PARALLAX_SPEED_ACTUAL = PARALLAX_SPEED_PERCENT * 0.01;
+
+interface Experience {
+	default: never;
+	role: string;
+	company: string;
+	location: string;
+	start: string;
+	end: string;
+	'project-name': string;
+	description: string;
+	bgrd: string;
+}
+
+const experienceModules = import.meta.glob('../assets/info/projects/*.tsx', { eager: true });
+
+const importedExperiences = Object.entries(experienceModules).reduce((acc, [path, module]) => {
+	const key = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || '';
+	acc[key] = (module as Experience).default || module;
+	return acc;
+}, {} as Record<string, Experience>);
+
+// Sort project by start date, latest first (Desc)
+const sortExperiencesByDate = (entries: [string, Experience][]): [string, Experience][] => {
+	return [...entries].sort((a, b) => {
+		const dateA = parseDate(a[1]['start']);
+		const dateB = parseDate(b[1]['start']);
+		return dateB.getTime() - dateA.getTime();
+	});
+};
 
 function ExperienceEntry() {
 	const parallaxRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -45,7 +74,7 @@ function ExperienceEntry() {
 	return (
 		<div className="mx-auto w-full max-h-full min-h-full justify-center items-center">
 
-			{Object.entries(experienceFiles).map(([key, entry], index) => (
+			{sortExperiencesByDate(Object.entries(importedExperiences)).map(([key, entry], index) => (
 				<div
 					key={key}
 					className="h-auto pb-10 relative overflow-hidden"
