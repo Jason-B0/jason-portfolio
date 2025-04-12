@@ -2,8 +2,7 @@ export default {
 	'role': "Technical Lead",
 	'company': "BanTech Systems (ROBLOX)",
 	'location': "Remote (ROBLOX Platform, based in United Kingdom)",
-	'start': "2023 -",
-	'end': "2024",
+	'start-end': "2023 - 2024",
 	'project-name': "Stepford County Railway",
 	'description': `
 			<ul>

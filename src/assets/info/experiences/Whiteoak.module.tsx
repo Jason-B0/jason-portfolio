@@ -2,8 +2,7 @@ export default {
 	'role': "Senior Programmer",
 	'company': "Whiteoak Studios (ROBLOX)",
 	'location': "Remote (ROBLOX Platform, based in United States)",
-	'start': "2023 -",
-	'end': "2024",
+	'start-end': "2023 - 2024",
 	'project-name': "Dawn Survival",
 	'description': `
 			<ul>

@@ -2,8 +2,7 @@ export default {
 	'role': "Referee & Referee Mentor",
 	'company': "Provincial Soccer Associations",
 	'location': "Nova Scotia & Prince Edward Island",
-	'start': "Since 2020",
-	'end': "",
+	'start-end': "Since 2020",
 	'project-name': "",
 	'description': `
 			<ul>

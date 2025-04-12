@@ -2,8 +2,7 @@ export default {
 	'role': "Intramurals Official",
 	'company': "Dalhousie University",
 	'location': "Halifax, Nova Scotia",
-	'start': "Since 2022",
-	'end': "",
+	'start-end': "Since 2022",
 	'project-name': "",
 	'description': `
 			<ul>

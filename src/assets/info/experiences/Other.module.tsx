@@ -2,8 +2,7 @@ export default {
 	'role': "Other Involvements",
 	'company': "",
 	'location': "",
-	'start': "",
-	'end': "",
+	'start-end': "",
 	'project-name': "",
 	'description': `
 			<ul>

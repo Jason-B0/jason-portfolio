@@ -2,8 +2,7 @@ export default {
 	'role': "League Administrative Assistant",
 	'company': "Soccer Nova Scotia",
 	'location': "Halifax, Nova Scotia",
-	'start': "",
-	'end': "2024",
+	'start-end': "2024",
 	'project-name': "",
 	'description': `
 			<ul>

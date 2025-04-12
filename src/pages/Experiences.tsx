@@ -4,7 +4,7 @@ import HorizontalLine from '../components/HorizontalLine.tsx';
 
 import "../styles/app.css";
 import TypewriterEffect from '../components/TypewriterEffect.tsx';
-import parseDate from '../utils/parseDate';
+import parseDate from '../utils/parseDate.tsx';
 
 const PARALLAX_SPEED_PERCENT = 20;
 const PARALLAX_SPEED_ACTUAL = PARALLAX_SPEED_PERCENT * 0.01;
@@ -14,14 +14,13 @@ interface Experience {
 	role: string;
 	company: string;
 	location: string;
-	start: string;
-	end: string;
+	'start-end': string;
 	'project-name': string;
 	description: string;
 	bgrd: string;
 }
 
-const experienceModules = import.meta.glob('../assets/info/projects/*.tsx', { eager: true });
+const experienceModules = import.meta.glob('../assets/info/experiences/*.tsx', { eager: true });
 
 const importedExperiences = Object.entries(experienceModules).reduce((acc, [path, module]) => {
 	const key = path.split('/').pop()?.replace(/\.[^/.]+$/, '') || '';
@@ -29,12 +28,26 @@ const importedExperiences = Object.entries(experienceModules).reduce((acc, [path
 	return acc;
 }, {} as Record<string, Experience>);
 
-// Sort project by start date, latest first (Desc)
 const sortExperiencesByDate = (entries: [string, Experience][]): [string, Experience][] => {
 	return [...entries].sort((a, b) => {
-		const dateA = parseDate(a[1]['start']);
-		const dateB = parseDate(b[1]['start']);
-		return dateB.getTime() - dateA.getTime();
+		const aDateStr = a[1]['start-end'];
+		const bDateStr = b[1]['start-end'];
+
+		const dateA: [Date, Date] = parseDate(aDateStr);
+		const dateB: [Date, Date] = parseDate(bDateStr);
+
+		// Compare end dates first
+		if (dateA[1].getTime() !== dateB[1].getTime()) {
+			return dateB[1].getTime() - dateA[1].getTime();
+		}
+
+		// If end dates are the same, compare start dates
+		if (dateA[0].getTime() !== dateB[0].getTime()) {
+			return dateB[0].getTime() - dateA[0].getTime();
+		}
+
+		// If dates are identical, sort by company name
+		return a[1]['company'].localeCompare(b[1]['company']);
 	});
 };
 
@@ -98,7 +111,7 @@ function ExperienceEntry() {
 									speed={10}
 								/>
 								<TypewriterEffect
-									content={`${entry['start']} ${entry['end']}`}
+									content={`${entry['start-end']}`}
 									isHtml={false}
 									className="text-sm mt-1.5"
 									speed={10}

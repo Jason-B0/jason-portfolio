@@ -2,7 +2,7 @@ import HomeBtn from '../components/HomeButton.tsx';
 import "../styles/app.css";
 import HorizontalLine from '../components/HorizontalLine.tsx';
 
-import parseDate from '../utils/parseDate';
+import parseDate from '../utils/parseDate.tsx';
 
 interface Association {
 	default: never;
@@ -34,9 +34,24 @@ const importedProjects = Object.entries(projectModules).reduce((acc, [path, modu
 // Sort project by start date, latest first (Desc)
 const sortProjectsByDate = (entries: [string, Association][]): [string, Association][] => {
 	return [...entries].sort((a, b) => {
-		const dateA = parseDate(a[1]['start-end']);
-		const dateB = parseDate(b[1]['start-end']);
-		return dateB.getTime() - dateA.getTime();
+		const aDateStr = a[1]['start-end'];
+		const bDateStr = b[1]['start-end'];
+
+		const dateA: [Date, Date] = parseDate(aDateStr);
+		const dateB: [Date, Date] = parseDate(bDateStr);
+
+		// Compare start date
+		if (dateA[0].getTime() !== dateB[0].getTime()) {
+			return dateB[0].getTime() - dateA[0].getTime();
+		}
+		
+		// Compare end date
+		if (dateA[1].getTime() !== dateB[1].getTime()) {
+			return dateB[1].getTime() - dateA[1].getTime();
+		}
+
+		// If dates are identical, sort by association name
+		return a[1]['association'].localeCompare(b[1]['association']);
 	});
 };
 
